@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 gem 'activeadmin', '~> 1.0.0.pre2'
 
 gem 'bootstrap-sass', '~> 3.3.6'
