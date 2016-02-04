@@ -8,14 +8,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">SubscriptionApp</a>
+      <a class="navbar-brand" href="/">SubscriptionApp</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li><a href="#">Sign in as <%= current_user.email %></li></a>
+          <li><%= link_to current_user.email, users_info_path %></li></a>
           <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to 'Sign in', new_user_session_path %></li>
