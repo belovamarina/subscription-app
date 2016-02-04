@@ -8,8 +8,14 @@
 </head>
 <body>
   <%= render 'nav' %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <div>
+        <%if alert && alert.length > 0 then %>
+            <div class="alert alert-warning"><%=alert%></div>
+        <% end %>
+        <%if notice && notice.size > 0 then %>
+          <div class="alert alert-success"><%=notice%></div>
+        <% end %>
+  </div>
 
 
 <%= yield %>
