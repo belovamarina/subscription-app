@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get '/users/info', to: 'users#info'
   post '/users/charge', to: 'users#charge'
+  get '/users/cancel_subscription', to: 'users#cancel_subscription'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
