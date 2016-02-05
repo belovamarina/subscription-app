@@ -1,6 +1,6 @@
-ActiveAdmin.register User do
+ActiveAdmin.register Subscription do
 
-  config.batch_actions = true
+  config.batch_actions = false
 
   filter :email
   filter :created_at
@@ -8,18 +8,11 @@ ActiveAdmin.register User do
   index do
     selectable_column
     id_column
-    column :email
+    column :stripe_user_id
+    column :active
+    column( "User", :user)
     column :created_at
     actions
-  end
-
-  form do |f|
-    f.inputs "User Details" do
-      f.input :email
-      f.input :password
-      f.input :password_confirmation
-    end
-    f.actions
   end
 
   # show :title => :email do
@@ -46,4 +39,3 @@ ActiveAdmin.register User do
 
 
 end
-
