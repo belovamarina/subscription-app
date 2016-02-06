@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
   def charge
     token = params["stripeToken"]
+ 
     customer = Stripe::Customer.create(
       source: token,
       plan: 'basic_plan_1',
@@ -32,6 +33,8 @@ class UsersController < ApplicationController
     current_user.subscription.active = true
     current_user.subscription.save
 
+    rescue Stripe::CardError => e
+    flash[:alert] = e.message
     redirect_to users_info_path
   end
 

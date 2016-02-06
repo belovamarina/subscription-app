@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'stripe_event'
+
 gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
