@@ -32,6 +32,7 @@ class UsersController < ApplicationController
     current_user.subscription.stripe_user_id = customer.id
     current_user.subscription.active = true
     current_user.subscription.save
+    redirect_to users_info_path
 
     rescue Stripe::CardError => e
     flash[:alert] = e.message
